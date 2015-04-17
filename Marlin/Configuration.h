@@ -21,10 +21,10 @@
 // SERIAL_PORT selects which serial port should be used for communication with the host.
 // This allows the connection of wireless adapters (for instance) to non-default port pins.
 // Serial port 0 is still used by the Arduino bootloader regardless of this setting.
-#define SERIAL_PORT 0
+#define SERIAL_PORT 0 //Все правильно
 
 // This determines the communication speed of the printer
-#define BAUDRATE 250000
+#define BAUDRATE 250000 //Все правильно
 //#define BAUDRATE 115200
 
 //// The following define selects which electronics board you have. Please choose the one that matches your setup
@@ -54,7 +54,7 @@
 // 301 = Rambo
 
 #ifndef MOTHERBOARD
-#define MOTHERBOARD 80
+#define MOTHERBOARD 33 //Все правильно
 #endif
 
 //===========================================================================
@@ -64,14 +64,14 @@
 // Make delta curves from many straight lines (linear interpolation).
 // This is a trade-off between visible corners (not enough segments)
 // and processor overload (too many expensive sqrt calls).
-#define DELTA_SEGMENTS_PER_SECOND 100
+#define DELTA_SEGMENTS_PER_SECOND 160 //Все правильно
 
 // Center-to-center distance of the holes in the diagonal push rods.
-#define DELTA_DIAGONAL_ROD 153.0 // mm            // Was 240.0 mm
+#define DELTA_DIAGONAL_ROD 240.0 // mm            //Все правильно
                                                   // V2 of 3DR = 153mm rods
 
 // Horizontal offset from middle of printer to smooth rod center.
-#define DELTA_SMOOTH_ROD_OFFSET 111.9 // mm         // For 3DR Version 2 - this number was lowered a little - to stop the hotend diging into the model.
+#define DELTA_SMOOTH_ROD_OFFSET 146.47 //Все правильно         // For 3DR Version 2 - this number was lowered a little - to stop the hotend diging into the model.
                                                   // 3DR Version 1 = 112.5mm
                                                   // Tried 111.5 still high in the middle and low at the ends - Was 172.0 mm
                                                   // Lowering this number makes the hot-end raise in the middle at 109.5 it was too high
@@ -83,10 +83,10 @@
 
 
 // Horizontal offset of the universal joints on the end effector.
-#define DELTA_EFFECTOR_OFFSET 33.0 // mm          // Was 42.0 mm
+#define DELTA_EFFECTOR_OFFSET 19.5 // mm          //Все правильно
 
 // Horizontal offset of the universal joints on the carriages. (This is measured from the edge of the M6mm Rod to the cent of universal joint, 14mm on Mini Delta (3DR)
-#define DELTA_CARRIAGE_OFFSET 14.0 // mm         // Was 25.0 // mm
+#define DELTA_CARRIAGE_OFFSET 33.0 // mm         //Все правильно
 
 // Effective horizontal distance bridged by diagonal push rods.
 #define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-DELTA_EFFECTOR_OFFSET-DELTA_CARRIAGE_OFFSET)
@@ -125,7 +125,7 @@
 // 52 is 200k thermistor - ATC Semitec 204GT-2 (1k pullup)
 // 55 is 100k thermistor - ATC Semitec 104GT-2 (Used in ParCan) (1k pullup)
 
-#define TEMP_SENSOR_0 1
+#define TEMP_SENSOR_0 5
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_BED 0
@@ -149,7 +149,7 @@
 #define HEATER_0_MAXTEMP 255
 #define HEATER_1_MAXTEMP 255
 #define HEATER_2_MAXTEMP 255
-#define BED_MAXTEMP 110
+#define BED_MAXTEMP 115
 
 // If your bed has low resistance e.g. .6 ohm and throws the fuse you can duty cycle it to reduce the
 // average current. The value should be an integer and the heat bed will be turned on for 1 interval of
@@ -365,7 +365,7 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 
 // default settings
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {55.5, 55.5, 55.5, 120}     // Regardless of calculations 120 is a good figure here for main at x4 and injector at x16
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {37.65, 37.65, 37.65, 120}     // Regardless of calculations 120 is a good figure here for main at x4 and injector at x16
 
                                                                   // Dual one at X4 and the other at X16
                                                                   // When Using Dual Extruder Stepers and both set to x8 use half value = 80
@@ -422,7 +422,7 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 
 // The RepRapDiscount Smart Controller
 // http://reprap.org/wiki/RepRapDiscount_Smart_Controller
-#define REPRAP_DISCOUNT_SMART_CONTROLLER                    //RichRap = enabled for RUMBA
+//#define REPRAP_DISCOUNT_SMART_CONTROLLER                    //RichRap = enabled for RUMBA
 
 
 //automatic expansion
@@ -436,8 +436,8 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 #define PLA_PREHEAT_HPB_TEMP 0
 #define PLA_PREHEAT_FAN_SPEED 255		// Insert Value between 0 and 255
 
-#define ABS_PREHEAT_HOTEND_TEMP 245
-#define ABS_PREHEAT_HPB_TEMP 0                  // This is now for NYLON printing no heated bed / was 100
+#define ABS_PREHEAT_HOTEND_TEMP 220
+#define ABS_PREHEAT_HPB_TEMP 110                  // This is now for NYLON printing no heated bed / was 100
 #define ABS_PREHEAT_FAN_SPEED 255		// Insert Value between 0 and 255
 
 
